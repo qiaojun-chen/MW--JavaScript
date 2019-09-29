@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换--只有循环切换</title>
+    <link rel="stylesheet" href="clear defult sytle.css">
+    <style>
+        .box{width: 437px;margin: 30px auto;text-align: center;
+            position: relative}
+        .text{text-align: center;font-size: 14px}
+        img{height: 400px;width: 400px}
+        .pic{height: 400px;width: 400px;position: relative;border: 10px solid #c6c6c6;}
+        .pic-same{width:400px;height: 30px;background:black;text-align:center;opacity:0.8;font-size: 10px;line-height:30px;color: white;}
+        .pic-num{position: absolute;top:0;}
+        .pic-text{position: absolute;bottom:0}
+
+        a{position: absolute;color: white;width: 40px;height:40px;opacity: 0.3;background: black;line-height: 40px}
+        a:hover{opacity:0.8; }
+        .pre{top:150px;}
+        .next{top:150px;right: 0}
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="button" value="循环切换" id="btn1">
+    <input type="button" value="顺序切换" id="btn2">
+    <p id="p1" class="text">图片可从最后一张跳转到第一张循环</p>
+    <div class="pic">
+        <a id="pre" class="pre"><</a>
+        <a id="next" class="next">></a>
+        <p class="pic-num pic-same" id="pic-num">数量加载中</p>
+        <p class="pic-text pic-same" id="pic-text">文字加载中</p>
+        <img alt="第一张" id="img"><!-- 一开始没有图片，不写src="img/1.jpg" -->
+    </div>
+</div>
+</body>
+</html>
+<script>
+    /* 1、获取元素 */
+    let oPre = document.getElementById('pre');
+    let oNext = document.getElementById('next');
+    let oPicnum = document.getElementById('pic-num');
+    let oPictext = document.getElementById('pic-text');
+    let oImg = document.getElementById('img');
+    let oBtn1 = document.getElementById('btn1');
+    let oBtn2 = document.getElementById('btn2');
+    let oP1 = document.getElementById('p1');
+
+
+    oBtn1.onclick = function(){
+        oP1.innerHTML='图片可从最后一张跳转到第一张循环';
+    }
+    oBtn2.onclick = function(){
+        oP1.innerHTML='图片只能到最后一张';
+    }
+
+    /* 2、准备数据 */
+    let arrpic = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg'];/* 数据之图片地址 后面可以通过ajkx加载 */
+    let arrpictext = ['文字1','文字2','文字3','文字4']    /* 数据之图片描述 */
+
+    let num = 0;
+
+    // 3、初始化。最开始显示的东西
+    function initia(){
+        oPicnum.innerHTML = num+1+'/'+ arrpic.length;
+        oPictext.innerHTML = arrpictext[num];
+        oImg.src = arrpic[num];
+    }
+    initia();/* 把一整串代码定义为函数，执行函数 */
+
+    // 4、点击下一张 通过改变num值实现
+    oNext.onclick = NEXT;
+    function NEXT (){
+        num++;        /* 点击按钮后的首要任务就是把num+1 */
+        if(num == arrpic.length+1){
+            num = 0;/* 图片走到头了，再重新置0 */
+        }
+        initia();/* 执行初始化内容 */
+        }
+    // 点击上一张 原理同上
+    oPre.onclick = PRE;
+    function PRE (){
+        num--;        /* 点击按钮后的首要任务就是把num+1 */
+        if(num == -1){
+            num = arrpic.length-1;/* 图片走到头了，再重新置0 */
+        }
+        initia();/* 执行初始化内容 */
+    }
+
+</script>

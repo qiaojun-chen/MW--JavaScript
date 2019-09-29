@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<div style="margin: 0 auto">
+    <input type="button" id="red" value="请点击" style="height: 100px;width: 200px">
+</div>
+
+<!--<input type="button" id="blue" value="觉得某雪是狗请点击">-->
+<br/>
+<!--<div style="height: 250px;width: 250px;border: 1px solid black;" id="S1"></div>-->
+</body>
+</html>
+<script>
+    let red = document.getElementById('red');
+    let blue = document.getElementById('blue');
+    let S1 = document.getElementById('S1');
+
+    red.onclick=showred;
+    blue.onclick=showblue;
+
+    function showred () {
+        // S1.style.background='red';
+        alert('万狗狗')
+
+    }
+    // function showblue() {
+    //     S1.style.background='blue';
+    //     S1.style.width='100px';
+    //
+    // }
+</script>

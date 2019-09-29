@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;border: 1px solid;
+            position: absolute;left: 0;top: 0}
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+<input type="button" value="生成10个颜色块" id="btn" style="position: absolute ;left: 800px">
+</body>
+</html>
+<script>
+   let obtn = document.getElementById('btn');
+   let arrdiv= document.getElementsByTagName('div');
+   let odiv1 = document.getElementById('div1');
+   let onoff = true;
+   obtn.onclick = function () {
+       if(onoff){
+           for(let i = 0;i<10;i++){
+               odiv1.innerHTML += '<div class="box">'+i+'</div>';
+           }
+           onoff = false;
+           for(let i=0;i<arrdiv.length;i++){
+               arrdiv[i].style.left=i*60+'px';
+           }
+       for(let i =0;i<100;i++){         //%取余
+           if (i%4===0){
+               arrdiv[i].style.background= 'red';
+           }
+           if (i%4===3){
+               arrdiv[i].style.background= 'yellow';
+           }
+           if (i%4===2){
+               arrdiv[i].style.background= 'blue';
+           }
+           if (i%4===1){
+               arrdiv[i].style.background= '#f2d6eb';
+           }
+       }
+
+       }
+
+   }
+
+</script>

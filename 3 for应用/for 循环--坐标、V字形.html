@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:50px;height: 50px;background: #96ff38;position: absolute}
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
+<script>
+    //通过改变div样式里面的绝对定位值，可以改变div位置。
+    let arrdiv = document.getElementsByTagName('div');//此时页面并没有div标签，但由于是动态的，可以从底下生成的div获取
+
+    //通过for往页面添加多个元素
+    let block = '';
+    for(let i=0;i<11;i++){
+        block +='<div>'+i+'</div>';
+    }
+    document.body.innerHTML = block;
+
+    //改变每个div的绝对定位值---通过for循环可以对每个div定位值同时改
+    for(let i=0;i<5;i++){
+        arrdiv[i].style.left = 50*i+'px';
+        arrdiv[i].style.top = 50*i+'px';
+    }
+
+    for(let i=5;i<arrdiv.length;i++){
+        arrdiv[i].style.left = 50*i+'px';
+        arrdiv[i].style.top = 50*(10-i)+'px';//(10-i)!!！i是递增，所以10-1是递减，刚好成V字形另一边的top值变化
+
+    }
+</script>

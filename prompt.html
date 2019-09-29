@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prompt</title>
+</head>
+<body>
+<button>Press me</button>
+</body>
+<script>
+    const button = document.querySelector('button');
+
+    button.onclick = function() {
+        let name = prompt('提示用输入文字?','qiaojuin');
+        // prompt(text, value);显示一个对话框，对话框中包含一条text文字信息，用来提示用户输入文字,v文本输入框中的默认值，该参数也可以省略不写
+        alert('Hello ' + name + ', nice to see you!');
+    }
+</script>
+</html>

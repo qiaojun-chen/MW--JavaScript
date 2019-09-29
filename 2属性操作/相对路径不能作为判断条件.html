@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="01.png" alt=" " id="pic">
+</body>
+</html>
+<script>
+   let oPic =  document.getElementById('pic');
+
+    oPic.onclick = nextPic;
+    function nextPic() {
+        if (oPic.src =='http://localhost:63342/web/JavaScript/2%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/01.png'){
+            /* 绝对路径才能作为判断条件 */
+            oPic.src ='03.png';
+        }
+    }
+
+</script>
+<!--http://localhost:63342/web/JavaScript/2%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/01.png    通过alert(opic.src)得到绝路径-->

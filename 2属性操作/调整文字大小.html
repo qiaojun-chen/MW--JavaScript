@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调整文字大小</title>
+</head>
+<body>
+<input type="button" value="+" id="btn1">
+<input type="button" value="-" id="btn2">
+
+<p id="p1" style="font-size: 15px">一个prompt对话框,包含一个单行文本框，一个“取消”按钮，一个“确定”按钮,在对话框关闭时，返回用户输入到文本框内的值(可能为空)
+    prompt和alert以及类似的对话框都是模态窗口，它们会阻止用户激活程序其他部分的界面，直到该对话框关闭。因此，你不应该过度使用该方法
+</p>
+</body>
+</html>
+<script>
+   let oP1 = document.getElementById('p1');
+   let oBtn1 = document.getElementById('btn1');
+   let oBtn2=document.getElementById('btn2');
+   let num = 12;
+
+   oBtn1.onclick = largeP;
+   function largeP() {
+       if (num<22){
+           num ++;
+           oP1.style.fontSize = num + 'px';
+       }
+
+   }
+
+   oBtn2.onclick = smallP;
+   function smallP() {
+        if (num>12)
+       num --;
+       oP1.style.fontSize = num + 'px';
+   }
+/* 判断文字大小 */
+</script>

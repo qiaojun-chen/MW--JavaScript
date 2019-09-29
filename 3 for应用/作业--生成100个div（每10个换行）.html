@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;border: 1px solid;
+            position: absolute;left: 0;top: 0}
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+
+<input type="button" value="生成10个颜色块" id="btn" style="position: absolute ;left: 800px">
+</body>
+</html>
+<script>
+    let obtn = document.getElementById('btn');
+    let odiv1 = document.getElementById('div1');
+    let arrdiv= odiv1.getElementsByTagName('div');
+
+    let onoff = true;
+    obtn.onclick = function () {
+        if(onoff){      //定义开关 点击按钮只会生成一次100个div，
+            for(let i = 0;i<100;i++){
+                odiv1.innerHTML += '<div class="box">'+i+'</div>';
+            }
+            onoff = false;
+        }
+        for (let i=0;i<10;i++){
+            arrdiv[i].style.left=i*60+'px';
+        }
+        for (let i=10;i<20;i++){
+            arrdiv[i].style.left=(i-10)*60+'px';
+            arrdiv[i].style.top=60+'px';
+        }
+        for (let i=20;i<30;i++){
+            arrdiv[i].style.left=(i-20)*60+'px';
+            arrdiv[i].style.top=120+'px';
+        }
+        for (let i=30;i<40;i++){
+            arrdiv[i].style.left=(i-30)*60+'px';
+            arrdiv[i].style.top=180+'px';
+        }
+        for (let i=40;i<50;i++){
+            arrdiv[i].style.left=(i-40)*60+'px';
+            arrdiv[i].style.top=240+'px';
+        }
+        for (let i=50;i<60;i++){
+            arrdiv[i].style.left=(i-50)*60+'px';
+            arrdiv[i].style.top=300+'px';
+        }
+        for (let i=60;i<70;i++){
+            arrdiv[i].style.left=(i-60)*60+'px';
+            arrdiv[i].style.top=360+'px';
+        }
+        for (let i=70;i<80;i++){
+            arrdiv[i].style.left=(i-70)*60+'px';
+            arrdiv[i].style.top=420+'px';
+        }
+        for (let i=80;i<90;i++){
+            arrdiv[i].style.left=(i-80)*60+'px';
+            arrdiv[i].style.top=480+'px';
+        }
+        for (let i=90;i<100;i++){
+            arrdiv[i].style.left=(i-90)*60+'px';
+            arrdiv[i].style.top=540+'px';
+        }
+
+
+        for(let i =0;i<100;i++){         //%取余
+            if (i%4===0){           //余数 0 红色
+                arrdiv[i].style.background= 'red';
+            }
+            if (i%4===3){ //余数 3 黄色
+                arrdiv[i].style.background= 'yellow';
+            }
+            if (i%4===2){
+                arrdiv[i].style.background= 'blue';
+            }
+            if (i%4===1){
+                arrdiv[i].style.background= '#f2d6eb';
+            }
+        }
+    }
+
+</script>

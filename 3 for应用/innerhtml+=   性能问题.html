@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // for(let i=0;i<100;i++){
+    //     document.body.innerHTML +='<input type="button" value="按钮">';
+    //     //通过 body.innerHTML += 是每次找到body加个东西，再把整个塞给body，如此循环。影响性能。
+    // }
+    //解决：先定义一个空变量，把最后都加起来的东西放到变量里，然后再把变量赋给body
+    let btn ='';
+    for(let i=0;i<100;i++){
+        btn +='<input type="button" value="按钮">';
+    }
+    document.body.innerHTML = btn;
+</script>

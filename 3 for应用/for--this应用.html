@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮变色</title>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+
+</body>
+</html>
+<script>
+   let arrinput = document.getElementsByTagName('input');
+   //   写法1：
+   // for(let i =0;i<arrinput.length;i++) {
+   //     arrinput[i].onclick = function () {
+   //         arrinput[i].style.background = 'red';
+   //     }
+   // }
+
+   //写法2：通过this。元素.事件=function(){ this.操作} 此时this指向元素
+   // for(let i =0;i<arrinput.length;i++) {
+   //     arrinput[i].onclick = function () {
+   //         this.style.background = 'red';    //this指的是调用函数的arrinput[i]即当前的按钮
+   //     }
+   // }
+
+    //写法3：通过this。元素.事件=function(){函数();};    函数(this);   this指的是windows
+   // let that =null; //等下存放this内容
+   // for(let i =0;i<arrinput.length;i++) {
+   //     arrinput[i].onclick = function () {
+   //          that=this;  //将当前点击的按钮存放到that中，后面给函数调用使用
+   //          abc();      //调用函数
+   //     }
+   // }
+   // function  abc() {
+   //      that.style.background= 'red';   //不能使用this.style.background= 'red';因为这里的this指的是windows；通过存放this（指的当前点击的按钮）的that
+   //  }
+
+   //方法4：即方法2.。。。
+   for(let i =0;i<arrinput.length;i++) {
+       arrinput[i].onclick =functionabc;
+   }
+   function functionabc() {
+       this.style.background='red';
+   }
+</script>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预热作业</title>
+    <link rel="stylesheet" href="clear defult sytle.css">
+    <style>
+        .box{height: 420px;width: 735px;background: #efefef;margin: 30px auto;position: relative}
+        .top{height: 80px}
+        p{font:bold 24px/34px 宋体;float: left;padding-top: 20px}
+        /*input{padding-top: 20px}*/
+        .butn{width: 100px;height: 40px;background: red;font:bold 13px/44px 宋体;color: #ffffff;float: left;margin-top: 20px}
+        .box1{width: 100px;height: 100px;border: 4px solid black;margin-left: 25px;}
+        .menu{width: 300px;height: 200px;border: 20px solid #9b939b;position: absolute;right: 25px;bottom: 32px;background: #ffffff;display: none;}
+        ul{padding-top: 16px}
+        li{height:32px;padding-left: 33px;padding-bottom: 8px;font-size: 15px;line-height: 29px}
+        input{margin-right: 5px}
+        .red{height: 36px;width: 32px;background: red;color: white;}
+        .yell{height: 36px;width: 32px;background: yellow;color: white}
+        .blue{height: 36px;width: 32px;background: blue;color: white}
+        .div2{height: 36px;width: 32px;background: #efefef;color: #848c8c}
+        .div3{padding-left: 88px}
+        .reset{width: 60px;height: 30px;background: #002952;color: #ffffff;}
+        /*.reset{font-size: 14px;line-height: 30px;}*/
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top clear">
+        <p>请为下面div设置样式：</p>
+        <input type="button" value="点击设置" class="butn" id="oBtn">
+    </div>
+    <div class="box1" id="box1"></div>
+    <div class="menu" id="menu">
+        <ul>
+            <li>请选择背景色：<input type="button" value="红" class="red" id="red"><input type="button" value="黄" class="yell" id="yellow"><input type="button" value="蓝" class="blue" id="blue"></li>
+            <li>请选择宽(px)：<input type="button" value="200" class="div2" id="W200"><input type="button" value="300" class="div2" id="W300"><input type="button" value="400" class="div2" id="W400"></li>
+            <li>请选择高(px)：<input type="button" value="200" class="div2" id="H200"><input type="button" value="300" class="div2" id="H300"><input type="button" value="400" class="div2" id="H400"></li>
+        </ul>
+        <div class="div3">
+            <input type="button" value="恢复" class="reset" id="reset">
+            <input type="button" value="确定" class="reset" id="ensure">
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+    /* 获取元素 */
+    let oBtn = document.getElementById('oBtn');
+    let oBox1 = document.getElementById('box1');
+    let oRed = document.getElementById('red');
+    let oYell = document.getElementById('yellow');
+    let oBlue = document.getElementById('blue');
+    let oEnsure = document.getElementById('ensure');
+    let oReset = document.getElementById('reset');
+    let oW200 = document.getElementById('W200');
+    let oW300 = document.getElementById('W300');
+    let oW400 = document.getElementById('W400');
+    let oH200 = document.getElementById('H200');
+    let oH300 = document.getElementById('H300');
+    let oH400 = document.getElementById('H400');
+    /* 关闭菜单 */
+    oEnsure.onclick=hid;
+    function hid() {
+        document.getElementById('menu').style.display='none';
+    }
+    /* 重置 */
+    oReset.onclick=reset;
+
+    function reset() {
+        oBox1.style.width = '100px';
+        oBox1.style.height = '100px';
+        oBox1.style.background = '#ffffff';
+        document.getElementById('menu').style.display = 'none';
+    }
+
+        /* 打开菜单 */
+        oBtn.onclick = showmenu;
+        function showmenu() {
+            document.getElementById('menu').style.display = 'block';
+        }
+
+        /* 变红色 */
+        oRed.onclick = showred;
+        function showred() {
+            oBox1.style.background = 'red';
+        }
+
+        /* 变黄色 */
+        oYell.onclick = showyellow;
+        function showyellow() {
+            oBox1.style.background = 'yellow';
+        }
+
+        /* 变蓝色 */
+        oBlue.onclick = showblue;
+        function showblue() {
+            oBox1.style.background = 'blue';
+        }
+        /* 宽200 */
+        oW200.onclick = showW200;
+        function showW200() {
+            oBox1.style.width = '200px';
+        }
+        /* 宽300 */
+        oW300.onclick= showW300;
+        function showW300() {
+            oBox1.style.width = '300px';
+        }
+        /* 宽400 */
+        oW400.onclick= showW400;
+        function showW400() {
+            oBox1.style.width = '400px';
+        }
+        /* 高200 */
+        oH200.onclick= showH200;
+        function showH200() {
+            oBox1.style.height = '200px';
+        }
+        /* 高300 */
+        oH300.onclick= showH300;
+        function showH300() {
+            oBox1.style.height = '300px';
+        }
+        /* 高400 */
+        oH400.onclick= showH400;
+        function showH400() {
+            oBox1.style.height = '400px';
+    }
+</script>

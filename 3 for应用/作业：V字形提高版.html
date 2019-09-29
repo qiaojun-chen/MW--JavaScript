@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div{
+            height: 50px;
+            width:50px;background: #96ff38;position: absolute;top:0;left: 0}
+    </style>
+</head>
+<body>
+<input type="button" value="点击切换V字形" id="btn" style="position: absolute;right: 1000px">
+<div id="box"></div>
+</body>
+</html>
+<script>
+   let obtn = document.getElementById('btn');   //获取按钮元素
+   let obox =document.getElementById('box');   //获取盒子元素
+   let arrdiv = obox.getElementsByTagName('div'); //获取5个div元素
+    let num=0;
+    let onoff= true;
+   //初始化
+   obtn.onclick = function () {
+       if(onoff){                 //定义开关，只生成一组div，否则每次点击都会生成div，只是没有移动位置，始终在左上角
+           for (let i = 0; i < 5; i++) {
+               obox.innerHTML += '<div class=\'div\'>' + i + '</div>';//先生成5个div
+           }
+           onoff=false;
+       }
+       if (num === 0) {         //第一个形状
+           for (let i = 0; i < 3; i++){
+               arrdiv[i].style.left = i * 50 + 'px';
+               arrdiv[i].style.top = i * 50 + 'px';
+           }
+           for (let i = 3; i < 5; i++) {
+               arrdiv[i].style.left = i * 50 + 'px';
+               arrdiv[i].style.top = (4-i) * 50 + 'px';
+           }
+       }
+       else if (num === 1) {        //第二个形状
+           for (let i = 0; i < 3; i++) {
+               arrdiv[i].style.left = (2-i) * 50 + 'px';    //
+               arrdiv[i].style.top = i *50 + 'px';
+           }
+           for(let i = 3; i < 5; i++){
+               arrdiv[i].style.left = (i-2) *50 + 'px';
+               arrdiv[i].style.top =i*50 + 'px';
+           }
+       }
+       else if (num === 2) {        //第三个形状
+           for (let i = 0; i <3; i++) {
+               arrdiv[i].style.left = i * 50 + 'px';
+               arrdiv[i].style.top = (2-i)* 50 + 'px';
+           }
+           for(let i = 3; i < 5; i++){
+               arrdiv[i].style.left = i*50 + 'px';
+               arrdiv[i].style.top =(i-2) *50 + 'px';
+           }
+       }
+       else if (num === 3) {        //第四个形状
+           for (let i = 0; i <3; i++) {
+               arrdiv[i].style.left = i* 50 + 'px';
+               arrdiv[i].style.top =i* 50 + 'px';
+           }
+           for(let i = 3; i < 5; i++){
+               arrdiv[i].style.left = (4-i)*50 + 'px';
+               arrdiv[i].style.top =i*50 + 'px';
+           }
+       }
+       num++;
+       if(num===4){     //如果按钮按了4下，num回到零，重新开始
+           num=0;
+       }
+
+   }
+
+</script>

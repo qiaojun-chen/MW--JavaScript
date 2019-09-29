@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <h2>我的好友</h2>
+        <ul> <!--第一步 找个这个ul -->
+            <li>机器1</li>
+            <li>机器2</li>
+            <li>机器3</li>
+        </ul>
+    </li>
+    <li>
+        <h2>我的同学</h2>
+        <ul>
+            <li>机器1</li>
+            <li>机器2</li>
+            <li>机器3</li>
+        </ul>
+    </li>
+    <li>
+        <h2>我的同事</h2>
+        <ul>
+            <li>机器1</li>
+            <li>机器2</li>
+            <li>机器3</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    //1、找到3个ul
+    let list= document.getElementById('list');
+    //2、在list下找到3个ul--
+    let arrli= null;             //定义一个空的arrli，为下面找到li存放li
+
+    let arrul = list.getElementsByTagName('ul');//类似第一维数组
+    for(let i = 0;i<arrul.length;i++){
+
+        arrli= arrul[i].getElementsByTagName('li');      //在arrul[i]下找到li，并赋给arrli
+
+        for(let j=0;j<arrli.length;j++){
+            arrli[j].style.border='1px solid red';
+        }
+    }
+</script>

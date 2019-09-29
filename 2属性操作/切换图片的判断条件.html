@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>切换图片--判断条件</title>
+</head>
+<body>
+<img src="01.png" alt=" " id="pic1">
+
+</body>
+</html>
+<script>
+    let oPic1 =document.getElementById('pic1');
+    let onOff = true;/* 创造开关条件  */
+
+    oPic1.onclick= change;
+    function change() {
+        if (onOff){
+            oPic1.src ='01.png';
+            onOff = false;
+        } else {
+            oPic1.src ='03.png';
+            onOff = true;
+
+
+        }
+
+    }
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[]的使用</title>
+    <style>
+        .box{height: 100px;width: 100px;border: 1px solid black}
+    </style>
+</head>
+<body>
+属性<input type="text" id="attr">
+值<input type="text" id="value">
+<input type="button" id="sure" value="确认">
+
+
+<div id="box" class="box"></div>
+</body>
+</html>
+<script>
+    let oAttr = document.getElementById('attr');
+    let oValue =  document.getElementById('value');
+    let oBox = document.getElementById('box');
+    let oSurex = document.getElementById('sure');
+
+    oSurex.onclick = change;
+    function change() {
+        oBox.style[oAttr.value] = oValue.value;
+
+    }
+
+</script>

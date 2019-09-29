@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<label for="text"><input type="text" id="text"></label>
+<br/>
+<br/>
+<input type="button" value="改变p内容" id="btn1">
+<p id="graph">文字文字文字文字文字</p>
+</body>
+</html>
+<script>
+    document.getElementById('btn');
+    document.getElementById('text');
+    document.getElementById('graph');
+
+    let oBtn = document.getElementById('btn');
+    let oBtn1 = document.getElementById('btn1');
+    let oText = document.getElementById('text');
+    let oGraph = document.getElementById('graph');
+
+    oBtn.onclick = showvalue;
+    function showvalue () {
+        oBtn.value='button';/* 属性写操作，点击按钮将按钮的value变成别的 */
+        oText.value ='属性写操作';/* 属性写操作，点击按钮将text的value变成别的 */
+        alert(oText.value);/* 属性操作-读操作,点击按钮后，将text表单的内容读取出来 */
+    }
+    /* innerHTML */
+    oBtn1.onclick = changeP;
+    function changeP() {
+        oGraph.innerHTML = oText.value;/* 改变P元素内容 */
+        oText.value = ''/* 点击按钮后 清空text 提交后清空*/
+    }
+</script>

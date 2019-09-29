@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击生成新闻列表" id="btn">
+<ul id="list"></ul>
+</body>
+</html>
+<script>
+   let olist=document.getElementById('list');//列表元素
+   let obtn = document.getElementById('btn');//按钮元素
+
+   //新闻数组
+   let arrnews = ['福州：个人未按规定分类投放生活垃圾最高罚200元','连江可门港中学动建','福州启用33处电子监控抓拍设备','市政协聚焦垃圾分类工作现状',
+   '10月1日起福建部分路段交通管制','福建中学这些人被清华北大降分录取','鼓楼将新建公厕50个以上','全部纳入数字管理平台','台江十大奋斗故事揭晓'];
+
+   let onoff = true;        //定义开关
+   obtn.onclick =function () {
+       if(onoff){   //true 执行下面的
+           for(let i=0;i<arrnews.length;i++){
+               olist.innerHTML+='<li>'+arrnews[i]+'</li>';
+           }
+           onoff = false;  // 把if的条件改为false 就执行不了下面的
+       }
+
+   }
+
+
+
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="clear defult sytle.css">
+    <style>
+        .box{width: 250px;height: 450px;border: 1px solid black;margin: 30px auto;
+        position: relative;}
+        .text{width: 140px;height: 35px;}
+        .p1{width: 250px;height: 400px;border: 1px solid red;word-break: break-all;overflow-y: auto;background: #f5f4f8;font-size: 14px;line-height: 20px}
+        .box2{position: absolute;bottom: 0}
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <p class="p1" id="p1"></p>
+    <div class="box2" id="box2">
+        <img src="img/5.jpg" alt=" " id="img">
+        <input type="text" class="text" id="text">
+        <input type="button" value="发送" id="send">
+    </div>
+
+</div>
+</body>
+</html>
+<script>
+    //1、获取元素
+    // let osend = document.getElementById('send');
+    let oimg = document.getElementById('img');
+    let otext = document.getElementById('text');
+    let osend = document.getElementById('send');
+    let op1 = document.getElementById('p1');
+    // let obox = document.getElementById('box');
+
+
+
+
+    //点击切换表情
+    let onoff = true;
+    oimg.onclick = function(){
+        if(onoff){
+            oimg.src = 'img/5.jpg';
+            onoff = false;
+        }
+        else {
+            oimg.src = 'img/6.jpg';
+            onoff = true;
+        }
+
+    };
+    // oimg.onclick = function(){oimg.src = 'img/5.jpg'};
+    osend.onclick = function () {
+        if(otext.value === ''){
+            alert('请输入');
+        }else{
+            if(onoff){
+                op1.innerHTML +='<img src="img/5.jpg">'+otext.value+'<br/>';
+                otext.value = '';     //清空输入框
+            }else {
+                op1.innerHTML +='<img src="img/6.jpg">'+otext.value+'<br/>';
+                otext.value = '';     //清空输入框
+            }
+            op1.scrollTop = op1.scrollHeight;  //滚动条固定在底部.注意，这条代码需要放在底部，
+        }
+        // op1.scrollTop = op1.scrollHeight;  放在这里就会出现滚动条不是全在底部的问题
+
+
+    }
+    //
+    // osend.onclick = function () {
+    //     if(otext.value==''){
+    //         alert('请输入')
+    //     }else {
+    //         op1.innerHTML +='<img src="">'+otext.value+'<br/>';
+    //         otext.value = '';     //清空输入框
+    //     }
+    //
+    // }
+
+</script>

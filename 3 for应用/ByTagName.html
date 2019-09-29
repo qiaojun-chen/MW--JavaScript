@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="UL">
+    <li>fffff</li>
+    <li>ffff</li>
+    <li>ffff</li>
+</ul>
+<ul id="UL1">
+    <li>ffff</li>
+    <li>ffff</li>
+    <li>ffff</li>
+</ul>
+<ol id="OL">
+    <li>fffff</li>
+    <li>fffff</li>
+    <li>fffff</li>
+</ol>
+</body>
+</html>
+<script>
+    let oul = document.getElementsByTagName('ul')[0];    //使用TagName必须带上[]，因为像oUL.getElementsByTagName('li')获取到的值是多个的，需要指定是哪一个。arrli[0] arrli[1]...
+    let arrli = oul.getElementsByTagName('li');
+    arrli[0].style.color='red';
+
+
+
+   //  document.getElementById('UL');//静态方法，getElementById('UL')前面只能跟 document
+   //
+   //  document.getElementsByTagName('li');//动态方法，getElementById('UL')前面可以跟 document，也可以跟别的
+   // let arrli =  oUL.getElementsByTagName('li');     //在ul里面找标签为li的 而不是整个文档。
+   //  alert(arrli.length);
+    //具备数组的属性
+    //数组名[]
+    //数组名.length;
+    //使用TagName必须带上[]，因为像oUL.getElementsByTagName('li')获取到的值是多个的，需要指定是哪一个。arrli[0] arrli[1]...
+
+</script>
